@@ -1,47 +1,61 @@
-<!--Introduction to Basic HTML & HTML5
-HTML, or HyperText Markup Language, is a markup language used to describe the structure of a web page. It uses a special syntax or notation to organize and give information about the page to the browser. Elements usually have opening and closing tags that surround and give meaning to content. For example, there are different tag options to place around text to show whether it is a heading, a paragraph, or a list.
 
-For example:-->
+<!DOCTYPE html>
+<!--h2 is a secound heading, the order is h1, h2,...hn-->
+<html>
+<head><title>BasicHTMLandHTML5</title></head>
+<body>
+<h2>CatPhotoApp</h2>
+<!-- The main HTML5 tag helps search engines and other developers find the main content of your page.
+HTML5 introduces more descriptive HTML tags. These include main, header, footer, nav, video, article, section and others.-->
+<main>
 
-<h1>Top level heading: Maybe a page title</h1>
+  <!--p elements are the preferred element for paragraph text on websites. p is short for "paragraph".-->
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+<!--You can use a (anchor) elements to link to content outside of your web page.
+'a' elements need a destination web address called an href attribute. They also need anchor text.-->
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
-<p>A paragraph of text. Some information we would like to communicate to the viewer. This can be as long or short as we would like.</p>
+  <p>Things cats love:</p>
+  <!-- unordered list and orderedlist-->
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <!-- link in the action takes in the data which ypu will submit in the form
+    Checkboxes are a type of input.Each of your checkboxes can be nested within
+    its own label element. By wrapping an input element inside of a label element
+    it will automatically associate the checkbox input with the label element surrounding it.
+    All related checkbox inputs should have the same name attribute.It is considered
+    best practice to explicitly define the relationship between a checkbox input
+    and its corresponding label by setting the for attribute on the label element
+     to match the id attribute of the associated input element.-->
 
-<ol>
-  <li>Number one on the list</li>
-  <li>Number two</li>
-  <li>A third item</li>
-</ol>
-<!--Becomes:
-
-Top level heading: Maybe a page title
-A paragraph of text. Some information we would like to communicate to the user. This can be as long or short as we would like.
-
-Number one on the list
-Number two
-A third item
-The HyperText part of HTML comes from the early days of the web and its original use case. Pages usually contained static documents that contained references to other documents. These references contained hypertext links used by the browser to navigate to the reference document so the user could read the reference document without having to manually search for it.
-
-As web pages and web applications grow more complex, the W3 Consortium updates the HTML specification to ensure that a webpage can be shown reliably on any browser. The latest version of HTML is HTML5.-->
-
-<!--Basic HTML and HTML5: Say Hello to HTML ElementsPassed
-
-Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.
-
-First, you'll start by building a simple web page using HTML. You can edit code in your code editor, which is embedded into this web page.
-
-Do you see the code in your code editor that says <h1>Hello</h1>? That's an HTML element.
-
-Most HTML elements have an opening tag and a closing tag.
-
-Opening tags look like this:
-
-<h1>
-
-Closing tags look like this:
-
-</h1>
-
-The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.
-
-Each challenge has tests you can run at any time by clicking the "Run tests" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.-->
+<!-- division element is most commontly used container-->
+<div>
+  <form action="https://freecatphotoapp.com/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+    <!-- Here, you have two radio inputs. When the user submits the form with the
+       indoor option selected, the form data will include the line: indoor-outdoor=indoor.
+       This is from the name and value attributes of the "indoor" input.If you omit the
+        value attribute, the submitted form data uses the default value, which is on. In
+         this scenario, if the user clicked the "indoor" option and submitted the form,
+          the resulting form data would be indoor-outdoor=on, which is not useful. So the
+          value attribute needs to be set to something to identify the option.-->
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"checked> Outdoor</label><br>
+    <label for="loving"><input id="loving" type="checkbox" name="personality" value="loving"> Loving</label>
+    <label for="lazy"><input id="lazy" type="checkbox" name="personality" value="lazy"> Lazy</label>
+    <label for="energetic"><input id="energetic" type="checkbox" name="personality" value="energetic"checked> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+  </div>
+</main>
+</body>
+</html>
